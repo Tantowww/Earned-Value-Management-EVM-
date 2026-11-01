@@ -1,6 +1,6 @@
 # SIMPROKON EVM — Sistem Informasi Manajemen Proyek Konstruksi
 ### Berbasis Web dengan Metode Earned Value Management (EVM)
-### PT. Pesona Tamanindo | Proyek BXC-2 Bintaro Jaya
+
 
 ---
 
@@ -159,7 +159,6 @@ Sistem ini memenuhi:
 ✅ Dashboard Interaktif dengan Kurva-S (Chart.js)
 ✅ Role-Based Access Control (4 aktor)
 ✅ Laporan Print-Ready
-✅ Data Aktual PT. Pesona Tamanindo Proyek BXC-2
 ✅ Black Box Testing Ready (fungsionalitas terpisah per modul)
 
 ---
