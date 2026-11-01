@@ -1,0 +1,238 @@
+/* ============================================================
+   SIMPROKON EVM — Main Stylesheet (Tema Hijau Garden)
+   PT. Pesona Tamanindo
+   ============================================================ */
+
+:root {
+  --primary:       #43a047;
+  --primary-light: #a5d6a7;
+  --primary-dark:  #2e7d32;
+
+  --success:       #81c784;
+  --warning:       #aed581;
+  --danger:        #1b5e20;
+  --info:          #80cbc4;
+
+  --sidebar-w:     260px;
+  --topbar-h:      56px;
+  --font:          'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  background: #f0f4f8;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  height: var(--topbar-h);
+  background: linear-gradient(90deg, var(--primary) 0%, #66bb6a 100%);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1030;
+  box-shadow: 0 2px 16px rgba(27, 94, 32, 0.35);
+}
+.topbar-brand {
+  font-weight: 800;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: calc(100vh - var(--topbar-h));
+  background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 40%, #388e3c 100%);
+  position: fixed;
+  top: var(--topbar-h);
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 1020;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+.sidebar.collapsed {
+  width: 72px;
+}
+.sidebar.collapsed .sidebar-label,
+.sidebar.collapsed .sidebar-project-box {
+  display: none !important;
+}
+.sidebar-project-box {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.sidebar-link {
+  color: rgba(255,255,255,0.65);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.18s;
+  border-left: 3px solid transparent;
+  white-space: nowrap;
+}
+.sidebar-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border-left-color: rgba(255,255,255,0.4);
+}
+.sidebar-link.active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-weight: 700;
+  border-left-color: var(--primary-light); /* #a5d6a7 */
+}
+
+/* ── PAGE CONTENT ── */
+#page-content {
+  margin-left: var(--sidebar-w);
+  margin-top: var(--topbar-h);
+  padding: 24px;
+  min-height: calc(100vh - var(--topbar-h));
+  transition: margin-left 0.3s cubic-bezier(.4,0,.2,1);
+}
+#page-content.expanded {
+  margin-left: 72px;
+}
+
+/* ── KPI CARDS ── */
+.kpi-card {
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(67, 160, 71, 0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid transparent;
+}
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(67, 160, 71, 0.14);
+}
+.kpi-card .kpi-value {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.kpi-card .kpi-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.kpi-card .kpi-sub {
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-kpi {
+  font-size: 10px;
+  font-weight: 800;
+  background: var(--primary);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+.icon-kpi {
+  font-size: 24px;
+}
+
+/* ── PROJECT CARD ── */
+.project-card {
+  border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(67, 160, 71, 0.13) !important;
+}
+
+/* ── DONUT SVG ── */
+.donut-svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+.donut-svg text {
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+/* ── AVATAR ── */
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* ── TYPOGRAPHY ── */
+.fw-600 { font-weight: 600 !important; }
+.fw-700 { font-weight: 700 !important; }
+.fw-800 { font-weight: 800 !important; }
+.required::after { content: ' *'; color: var(--danger); }
+
+/* ── CARDS & TABLES ── */
+.card { border-radius: 14px; }
+.card-header { border-radius: 14px 14px 0 0 !important; }
+.table thead th { font-size: 11px; letter-spacing: 0.5px; font-weight: 700; text-transform: uppercase; }
+.table tbody td { font-size: 13px; vertical-align: middle; }
+.table-hover tbody tr:hover { background-color: #e8f5e9 !important; } /* hijau muda */
+
+/* ── FORMS ── */
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 13px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.12);
+}
+.form-label { font-size: 13px; margin-bottom: 5px; }
+
+/* ── BUTTONS ── */
+.btn { border-radius: 8px; font-weight: 600; font-size: 13px; }
+.btn-primary { background: var(--primary-light); border-color: var(--primary-light); }
+.btn-primary:hover { background: var(--primary); border-color: var(--primary); }
+.btn-sm { font-size: 12px; }
+
+/* ── BADGES ── */
+.badge { font-weight: 600; }
+
+/* ── ALERTS ── */
+.alert { border-radius: 10px; font-size: 13px; border: none; }
+.alert-success { background: #e8f5e9; color: #1b5e20; }
+.alert-danger  { background: #c8e6c9; color: #1b5e20; }
+.alert-warning { background: #f1f8e9; color: #33691e; }
+.alert-info    { background: #e0f2f1; color: #004d40; }
+
+/* ── PROGRESS ── */
+.progress { border-radius: 8px; background: #e2e8f0; }
+.progress-bar { border-radius: 8px; background: var(--primary-light); }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #a5d6a7; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #81c784; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .sidebar { width: 72px; }
+  .sidebar .sidebar-label,
+  .sidebar .sidebar-project-box { display: none !important; }
+  #page-content { margin-left: 72px; padding: 16px; }
+  .kpi-card .kpi-value { font-size: 20px; }
+}
